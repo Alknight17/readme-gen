@@ -1,13 +1,20 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
-const util = require('util');
 const inquirer = require('inquirer');
-const generateReadme = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
+
+const welcome = [
+    {
+        type: 'confirm',
+        prefix: '\b',
+        name: 'welcome',
+        message:'Welcome to my README.md generator. Press enter to begin, and fill out the prompts to generate a custom README.md'
+    },
+];
 
 
 
-
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -93,11 +100,26 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Create a function to write README file
+const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log(success)
+    );
+}
 
-// TODO: Create a function to initialize app
-function init() {}
+// Create a function to initialize app
+const init = async () => {
+    try {
+        await inquirer.prompt(welcome);
+        const data = await inquirer.prompt(questions);
+        writeToFile('./output/README.md', generateMarkdown(data));
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+// readme was successfully generated
+const success = (`README has been generated, check the output folder!`);
 
 // Function call to initialize app
 init();

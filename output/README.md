@@ -17,10 +17,10 @@
 
   * [Contributors](#contributors)
 
-  * [Questions](#questions) 
+  * [Contact](#contact) 
 
   <h2 id='description'> Description </h2>
-  This application takes prompt info from the command line, and uses it to generate a custom, professional README.md
+  This application takes info from propmts and generates a custom, professional README.md
 
   <h2 id='license'>License</h2>
       Copyright © Apache. All rights reserved.
@@ -28,19 +28,19 @@
       Lincensed under the Apache license.
 
   <h2 id='installation'> Installation </h2>
-  Install the node package manager with `npm i -y`
+  Ensure to install the node package manager by first running `npm init` and then `npm i -y`
 
   <h2 id='usage'> Usage </h2>
-  Please be respectful:)
+  Usage info
 
   <h2 id='tests'> Tests </h2>
-  blerb
+  Test Instructions
 
   <h2 id='contribution'> Contribution </h2>
-  Have fun!
+  Be respectful and have fun:)
 
   <h2 id='contact'> Contact </h2>
-  Knightalex17@gmail.com
-  Alknight17
+  Email :Knightalex17@gmail.com
 
+  GitHub:Alknight17
 

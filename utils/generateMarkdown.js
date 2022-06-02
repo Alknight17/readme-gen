@@ -62,9 +62,9 @@ function generateMarkdown(data) {
   ${data.contribNotes}
 
   <h2 id='contact'> Contact </h2>
-  Email :${data.email}
+  <p> Email :${data.email}
 
-  GitHub:${data.github}
+  GitHub:${data.github} </p>
 
 `;
 }

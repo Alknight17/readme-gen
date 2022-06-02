@@ -3,11 +3,11 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-const welcome = [
+const begin = [
     {
         type: 'confirm',
         prefix: '\b',
-        name: 'welcome',
+        name: 'begin',
         message:'Welcome to my README.md generator. Press enter to begin, and fill out the prompts to generate a custom README.md'
     },
 ];
@@ -110,7 +110,7 @@ const writeToFile = (fileName, data) => {
 // Create a function to initialize app
 const init = async () => {
     try {
-        await inquirer.prompt(welcome);
+        await inquirer.prompt(begin);
         const data = await inquirer.prompt(questions);
         writeToFile('./output/README.md', generateMarkdown(data));
     } catch (err) {
@@ -119,7 +119,7 @@ const init = async () => {
 }
 
 // readme was successfully generated
-const success = (`README has been generated, check the output folder!`);
+const success = (`README completed! Check the output folder for finished product!`);
 
 // Function call to initialize app
 init();
